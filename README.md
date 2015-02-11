@@ -16,3 +16,9 @@ My intention is to expand this repository to also show gomock usage, as well as 
 Dependencies are vendor'd. As such, you should use godep:
 
     godep go test
+
+## Regerating the mocks
+
+You'll need mockery insatlled and on your path:
+
+    mockery -name DynamoDBer
