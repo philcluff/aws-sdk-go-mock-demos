@@ -7,7 +7,9 @@ So far this approach demonstrates a usage of:
 * Testify: https://github.com/stretchr/testify/
 * Mockery: https://github.com/vektra/mockery
 
-My intention is to expand it to also show gomock usage.
+The test case is mocking out a DynamoDB query operation.
+
+My intention is to expand this repository to also show gomock usage, as well as the suggested Amazon approach, using handlers.
 
 ## Running
 
