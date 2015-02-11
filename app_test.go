@@ -2,6 +2,8 @@ package app
 
 import (
 	"fmt"
+	//"github.com/GeneticGenesis/aws-sdk-go-mock-demos/mocks"
+	"github.com/awslabs/aws-sdk-go/service/dynamodb"
 	"github.com/stretchr/testify/suite"
 	"testing"
 )
@@ -23,6 +25,13 @@ func (s *AppSuite) SetupSuite() {
 }
 
 func (s *AppSuite) TestHitDynamo() {
-	output, err := HitDynamo()
+
+	//client := new(mocks.DynamoDBer)
+
+	helper := &DynamoHelper{
+		dynamodb.New(nil),
+	}
+	output, err := helper.HitDynamo("1")
+	fmt.Printf("Found: %v entries\n", *output.Count)
 	fmt.Println(output, err)
 }
