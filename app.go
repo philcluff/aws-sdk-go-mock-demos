@@ -24,7 +24,7 @@ func HitDynamo() (*dynamodb.QueryOutput, error) {
 
 	output, err := client.Query(&dynamodb.QueryInput{
 		KeyConditions: m,
-		TableName:     aws.String("sometable"),
+		TableName:     aws.String("foobar2"),
 	})
 
 	return output, err

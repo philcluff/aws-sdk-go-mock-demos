@@ -1,6 +1,7 @@
 package app
 
 import (
+	"fmt"
 	"github.com/stretchr/testify/suite"
 	"testing"
 )
@@ -21,6 +22,7 @@ func (s *AppSuite) SetupSuite() {
 	// Suite Setup
 }
 
-func (s *AppSuite) TestTitleGet() {
-	// A test
+func (s *AppSuite) TestHitDynamo() {
+	output, err := HitDynamo()
+	fmt.Println(output, err)
 }
