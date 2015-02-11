@@ -4,8 +4,8 @@ A demonstration of approaches to mocking the behaviour of the new aws-sdk-go.
 
 So far this approach demonstrates a usage of:
 
-* Testify: https://github.com/stretchr/testify/
-* Mockery: https://github.com/vektra/mockery
+* [Testify](https://github.com/stretchr/testify/)
+* [Mockery](https://github.com/vektra/mockery)
 
 The test case is mocking out a DynamoDB query operation.
 
