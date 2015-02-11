@@ -18,22 +18,14 @@ func TestAppSuite(t *testing.T) {
 	suite.Run(t, new(AppSuite))
 }
 
-func (s *AppSuite) SetupTest() {
-	// Test Setup
-}
-
-func (s *AppSuite) SetupSuite() {
-	// Suite Setup
-}
-
 func (s *AppSuite) TestHitDynamo() {
+
 	client := new(mocks.DynamoDBer)
 	client.On("Query", mock.AnythingOfType("*dynamodb.QueryInput")).Return(&dynamodb.QueryOutput{Count: aws.Integer(0)}, nil)
 
-	helper := &DynamoHelper{
-		client,
-	}
+	helper := &DynamoHelper{client}
+
 	output, err := helper.HitDynamo("1")
 	fmt.Printf("Found: %v entries\n", *output.Count)
-	fmt.Println(output, err)
+	fmt.Printf("Err was: %v\n", err)
 }
